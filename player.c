@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 13:40:29 by mhummel           #+#    #+#             */
-/*   Updated: 2024/05/29 13:40:34 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/05/31 14:23:57 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,4 @@ void	move_player(t_game *game, int dx, int dy)
 	game->moves++;
 	printf("Moves: %d\n", game->moves);
 	render_map(game);
-}
-
-int	handle_keypress(int keycode, t_game *game)
-{
-	if (keycode == 53) // Escape key
-		free_game(game);
-	if (keycode == 13) // W key
-		move_player(game, 0, -1);
-	if (keycode == 1) // S key
-		move_player(game, 0, 1);
-	if (keycode == 0) // A key
-		move_player(game, -1, 0);
-	if (keycode == 2) // D key
-		move_player(game, 1, 0);
-	return (0);
-}
-
-int	close_game(t_game *game)
-{
-	free_game(game);
-	return (0);
 }
