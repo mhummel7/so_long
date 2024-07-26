@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 12:57:30 by mhummel           #+#    #+#             */
-/*   Updated: 2024/07/10 09:53:58 by mhummel          ###   ########.fr       */
+/*   Updated: 2024/07/26 11:21:22 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,12 @@ void	validate_map_walls(t_game_state *state)
 	check_horizontal_walls(state);
 }
 
-int is_valid_ber_file(const char *filename)
+int	is_valid_ber_file(const char *filename)
 {
-	size_t len = ft_strlen(filename);
+	size_t	len;
 
+	len = ft_strlen(filename);
 	if (len < 4)
-		return 0;
+		return (0);
 	return (ft_strncmp(filename + len - 4, ".ber", 4) == 0);
 }
