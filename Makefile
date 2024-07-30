@@ -6,7 +6,7 @@
 #    By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 08:35:58 by mhummel           #+#    #+#              #
-#    Updated: 2024/07/09 13:05:27 by mhummel          ###   ########.fr        #
+#    Updated: 2024/07/30 11:15:40 by mhummel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,14 @@ LIBFT		:= ./lib/libft
 
 HEADERS		:= -I ./include -I $(LIBMLX)/include -I $(LIBFT)
 LIBS		:= $(LIBFT)/libft/libft.a $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
-SRCS		:= $(shell find ./src -iname "*.c")
+SRCS		:= src/game_logic.c \
+				src/graphics.c \
+				src/main.c \
+				src/map_utils.c \
+				src/map_validation.c \
+				src/map.c \
+				src/path_validation_utils.c \
+				src/path_validation.c
 OBJS		:= ${SRCS:.c=.o}
 
 all: libft libmlx $(NAME)
